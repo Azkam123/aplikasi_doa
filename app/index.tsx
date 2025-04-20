@@ -1,12 +1,11 @@
 // app/index.tsx
-import { useLayoutEffect } from "react";
-import { useNavigation } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
+import Card from "@/component/Card";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>kholil</Text>
+      <Card judul="judul" arab="arab" terjemah="terjemah" latin="latin"/>
     </View>
   );
 }
