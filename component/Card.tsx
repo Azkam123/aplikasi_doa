@@ -11,6 +11,7 @@ const Card = ({ judul, latin, arab, terjemah }: cardData) => {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{judul}</Text>
+      <Text style={styles.bismillah}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</Text>
       <Text style={styles.arab}>{arab}</Text>
       <Text style={styles.latin}>{latin}</Text>
       <Text style={styles.terjemah}>Artinnya: {terjemah}</Text>
@@ -54,6 +55,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#444",
   },
+  bismillah : {
+    justifyContent : 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    marginBottom: 6,
+  }
 });
 
 export default Card;
