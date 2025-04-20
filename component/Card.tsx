@@ -13,7 +13,7 @@ const Card = ({ judul, latin, arab, terjemah }: cardData) => {
       <Text style={styles.title}>{judul}</Text>
       <Text style={styles.arab}>{arab}</Text>
       <Text style={styles.latin}>{latin}</Text>
-      <Text style={styles.terjemah}>{terjemah}</Text>
+      <Text style={styles.terjemah}>Artinnya: {terjemah}</Text>
     </View>
   );
 };
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
     height: 'auto',
-    width: 200,
+    width: 'auto',
   },
   title: {
     fontSize: 18,
