@@ -1,66 +1,71 @@
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 interface cardData {
-    judul ?: string,
-    arab ?: string,
-    latin ?: string,
-    terjemah ?: string,
+  id?: string;
+  judul?: string;
+  arab?: string;
+  latin?: string;
+  terjemah?: string;
 }
 
-const Card = ({ judul, latin, arab, terjemah }: cardData) => {
+const Card = ({ judul, id }: cardData) => {
+  const router = useRouter();
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{judul}</Text>
-      <Text style={styles.bismillah}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</Text>
-      <Text style={styles.arab}>{arab}</Text>
-      <Text style={styles.latin}>{latin}</Text>
-      <Text style={styles.terjemah}>Artinnya: {terjemah}</Text>
+      <View style={styles.row}>
+        <View style={styles.idBox}>
+          <Text style={styles.id}>{id}</Text>
+        </View>
+        <View style={styles.content}>
+          <TouchableOpacity onPress={() => router.push(`/detailDoa?id=${id}`)}>
+            <Text style={styles.title}>{judul}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ed9b02",
     borderRadius: 12,
-    padding: 16,
     margin: 12,
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
-    height: 'auto',
-    width: 'auto',
+    height: 75,
+    width: 300,
+    overflow: "hidden", // supaya radius tetap bagus
+  },
+  row: {
+    flexDirection: "row",
+    flex: 1,
+    height: "100%",
+  },
+  idBox: {
+    backgroundColor: "#ffffff",
+    width: 60, // lebar kotak ID
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  id: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#ed9b02",
+  },
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 12,
     color: "#333",
   },
-  arab: {
-    fontSize: 24,
-    color: "#000",
-    marginBottom: 8,
-    textAlign: "right",
-    fontFamily: "Amiri",
-  },
-  latin: {
-    fontSize: 14,
-    fontStyle: "italic",
-    color: "#555",
-    marginBottom: 8,
-  },
-  terjemah: {
-    fontSize: 14,
-    color: "#444",
-  },
-  bismillah : {
-    justifyContent : 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    marginBottom: 6,
-  }
 });
 
 export default Card;
