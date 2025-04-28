@@ -11,7 +11,7 @@ export default function GetStarted() {
       />
       <Text style={styles.title}>Selamat Datang di Doa Doa Harian</Text>
       <Text style={styles.subtitle}>
-        Temukan ketenangan setiap hari melalui doa-doa pilihan.
+        Temukan ketenangan anda setiap hari melalui doa-doa pilihsn anda.
       </Text>
 
       <TouchableOpacity
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#0dad1b12",
   },
   logo: {
     width: 120,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   button: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#cbab0a",
     paddingVertical: 15,
     paddingHorizontal: 40,
     borderRadius: 30,

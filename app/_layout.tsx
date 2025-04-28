@@ -15,8 +15,8 @@ export default function Layout() {
       <Stack.Screen
         name="listDoa"
         options={{
-          title: "List Doa",
-          headerStyle: { backgroundColor: "#ffa500" },
+          title: "List Doa Doa Harian",
+          headerStyle: { backgroundColor: "#cbab0a" },
           headerShown: true,
         }}
       />
@@ -24,7 +24,7 @@ export default function Layout() {
         name="detailDoa"
         options={{
           title: "Detail Doa",
-          headerStyle: { backgroundColor: "#ffa500" },
+          headerStyle: { backgroundColor: "#cbab0a" },
           headerShown: true,
         }}
       />

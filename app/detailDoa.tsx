@@ -62,8 +62,8 @@ const DetailDoa = () => {
       <Text style={styles.title}>{doa.judul}</Text>
       <Text style={styles.bismillah}>بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ</Text>
       <Text style={styles.arab}>{doa.arab}</Text>
-      <Text style={styles.latin}>{doa.latin}</Text>
-      <Text style={styles.terjemah}>{doa.terjemah}</Text>
+      <Text style={styles.latin}>Latin: {doa.latin}</Text>
+      <Text style={styles.terjemah}>Artinya: {doa.terjemah}</Text>
     </View>
   );
 };
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#fff",
+    backgroundColor: "#9db193",
   },
   title: {
     fontSize: 24,

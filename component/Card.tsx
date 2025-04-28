@@ -29,7 +29,7 @@ const Card = ({ judul, id }: cardData) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#ed9b02",
+    backgroundColor: "#cbab0a",
     borderRadius: 12,
     margin: 12,
     shadowColor: "#000",
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   id: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#ed9b02",
+    color: "#cbab0a",
   },
   content: {
     flex: 1,
