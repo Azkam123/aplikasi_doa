@@ -6,12 +6,16 @@ export default function GetStarted() {
   return (
     <View style={styles.container}>
       <Image
+        style={styles.masjid}
+        source={require("@/assets/images/desain-aplikasi.jpg")}
+      />
+      <Image
         style={styles.logo}
         source={require("@/assets/images/logo-aplikasi.png")}
       />
       <Text style={styles.title}>Selamat Datang di Doa Doa Harian</Text>
       <Text style={styles.subtitle}>
-        Temukan ketenangan anda setiap hari melalui doa-doa pilihsn anda.
+        Temukan ketenangan anda setiap hari melalui doa-doa pilihan anda.
       </Text>
 
       <TouchableOpacity
@@ -30,12 +34,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "#0dad1b12",
+    backgroundColor: "#aabea7",
   },
   logo: {
     width: 120,
     height: 120,
     marginBottom: 30,
+    marginTop: 50,
   },
   title: {
     fontSize: 24,
@@ -62,4 +67,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  masjid:{
+    width:350,
+    height:270,
+    opacity: 0.2,
+    marginTop: -135,
+  }
 });
