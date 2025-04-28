@@ -1,49 +1,25 @@
-import { useState, useEffect } from "react";
-import { View, StyleSheet, ActivityIndicator, FlatList } from "react-native";
-import Card from "@/component/Card";
-import { getListDoa } from "@/api/doaAPI";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function Index() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const loadData = async () => {
-    try {
-      const result = await getListDoa();
-      setData(result);
-    } catch (error) {
-      console.log('Error : ' + error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  if (loading) {
-    return (
-      <View style={styles.container}>
-        <ActivityIndicator size={60} color={'#ff0000'} />
-      </View>
-    );
-  }
-
+export default function GetStarted() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <FlatList
-        keyExtractor={(item) => item.id.toString()} // Pastikan keyExtractor mengembalikan string
-        data={data}
-        renderItem={({ item }) => (
-          <Card
-            judul={item.judul}
-            arab={item.arab}
-            terjemah={item.terjemah}
-            latin={item.latin}
-          />
-        )}
+      <Image
+        style={styles.logo}
+        source={require("@/assets/images/logo-aplikasi.png")}
       />
+      <Text style={styles.title}>Selamat Datang di Doa Doa Harian</Text>
+      <Text style={styles.subtitle}>
+        Temukan ketenangan setiap hari melalui doa-doa pilihan.
+      </Text>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/listDoa")}
+      >
+        <Text style={styles.buttonText}>Mulai Sekarang</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -53,5 +29,37 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    padding: 20,
+    backgroundColor: "#FFFFFF",
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 30,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#666",
+    textAlign: "center",
+    marginBottom: 40,
+    paddingHorizontal: 20,
+  },
+  button: {
+    backgroundColor: "#4CAF50",
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 30,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
